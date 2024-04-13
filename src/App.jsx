@@ -1,11 +1,15 @@
+import AddTodo from "./components/AddTodo";
+import AppName from "./components/AppName";
+import TodoList from "./components/TodoList";
 
 function App() {
-
   return (
     <>
-    <center className="todo-container">Todo App</center>
+      <AppName />
+      <AddTodo />
+      <TodoList />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
