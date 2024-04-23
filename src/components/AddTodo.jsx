@@ -1,23 +1,22 @@
-import React from "react";
+import { useState } from 'react'
 
-const AddTodo = () => {
+const AddTodo = ({ onNewItem }) => {
+
+  const [inputData, setInputData] = useState("");
+
+  const inputValue = (e) => {
+    setInputData(e.target.value)
+  }
+
+  const handleButton = () => {
+    onNewItem(inputData);
+    setInputData("");
+  }
+
   return (
-    <div className="container text-center">
-      <div className="row">
-        <div className="col-5">
-          <input type="text" placeholder="Enter Todo" />
-        </div>
-        <div className="col-5">
-          <input type="date" />
-        </div>
-        <div className="col-2">
-          <button type="button" className="btn btn-success">
-            Add
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
+    <><input type="text" name="" id="" onChange={inputValue} value={inputData} />
+    <button onClick={handleButton}>Add todo</button></>
+  )
+}
 
-export default AddTodo;
+export default AddTodo
